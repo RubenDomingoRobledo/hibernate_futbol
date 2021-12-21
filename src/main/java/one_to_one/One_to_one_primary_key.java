@@ -25,6 +25,8 @@ public class One_to_one_primary_key {
 		        equipo1.setEntrenador(entrenador1);
 		        entrenador1.setEquipo(equipo1);
 		        
+		        s.save(equipo1);
+		        
 		        Equipo equipo2 = new Equipo();
 		        equipo2.setNombre("FC Barcelona");
 		        equipo2.setFecha_fundacion("29-11-1899");
@@ -38,6 +40,8 @@ public class One_to_one_primary_key {
 		        equipo2.setEntrenador(entrenador2);
 		        entrenador2.setEquipo(equipo2);
 		        
+		        s.save(equipo2);
+		        
 		        Equipo equipo3 = new Equipo();
 		        equipo3.setNombre("Atletico de Madrid");
 		        equipo3.setFecha_fundacion("26-04-1903");
@@ -50,6 +54,8 @@ public class One_to_one_primary_key {
 		        
 		        equipo3.setEntrenador(entrenador3);
 		        entrenador3.setEquipo(equipo3);
+		        
+		        s.save(equipo3);
 		   
 		        t.commit();
 		        s.close();
