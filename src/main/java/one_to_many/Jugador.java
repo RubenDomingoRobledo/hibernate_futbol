@@ -1,35 +1,35 @@
-package one_to_one_foreign_key;
+package one_to_many;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity 
-@Table(name="ENTRENADOR")
-public class Entrenador_foreign_key {
-	private int id_Entrenador;
+@Entity
+@Table(name = "JUGADOR")
+public class Jugador {
+	private int id_Jugador;
 	private String nombre;
 	private String apellidos;
 	private int edad;
-	private Equipo_foreign_key equipo;
-
-	public Entrenador_foreign_key() {
+	private String posicion;
+	private Equipo equipo;
+	
+	public Jugador() {
 	}
 
 	@Id
+    @Column(name = "ID_JUGADOR")
     @GeneratedValue
-    @Column(name = "ID_ENTRENADOR")
-	public int getId_Entrenador() {
-		return id_Entrenador;
+	public int getId_Jugador() {
+		return id_Jugador;
 	}
 
-	public void setId_Entrenador(int id_Entrenador) {
-		this.id_Entrenador = id_Entrenador;
+	public void setId_Jugador(int id_Jugador) {
+		this.id_Jugador = id_Jugador;
 	}
 
 	public String getNombre() {
@@ -56,15 +56,21 @@ public class Entrenador_foreign_key {
 		this.edad = edad;
 	}
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="ID_EQUIPO")
-	public Equipo_foreign_key getEquipo() {
+	public String getPosicion() {
+		return posicion;
+	}
+
+	public void setPosicion(String posicion) {
+		this.posicion = posicion;
+	}
+
+	@ManyToOne
+    @JoinColumn(name = "ID_EQUIPO")
+	public Equipo getEquipo() {
 		return equipo;
 	}
 
-	public void setEquipo(Equipo_foreign_key equipo) {
+	public void setEquipo(Equipo equipo) {
 		this.equipo = equipo;
 	}
-	
-	
 }

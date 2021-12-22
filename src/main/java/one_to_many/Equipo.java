@@ -1,26 +1,25 @@
-package one_to_one_primary_key;
+package one_to_many;
 
-import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="EQUIPO")
-public class Equipo_primary_key {
+public class Equipo {
 	private int id_Equipo;
 	private String nombre;
-	private Date fecha_fundacion;
+	private String fecha_fundacion;
 	private String ciudad;
-	private Entrenador_primary_key entrenador;
+	private Set<Jugador> jugadores;
 
-	public Equipo_primary_key() {
+	public Equipo() {
 	}
 
 	@Id
@@ -42,11 +41,11 @@ public class Equipo_primary_key {
 		this.nombre = nombre;
 	}
 
-	public Date getFecha_fundacion() {
+	public String getFecha_fundacion() {
 		return fecha_fundacion;
 	}
 
-	public void setFecha_fundacion(Date fecha_fundacion) {
+	public void setFecha_fundacion(String fecha_fundacion) {
 		this.fecha_fundacion = fecha_fundacion;
 	}
 
@@ -58,13 +57,13 @@ public class Equipo_primary_key {
 		this.ciudad = ciudad;
 	}
 
-	@OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-	public Entrenador_primary_key getEntrenador() {
-		return entrenador;
+	@OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
+	public Set<Jugador> getJugadores() {
+		return jugadores;
 	}
 
-	public void setEntrenador(Entrenador_primary_key entrenador) {
-		this.entrenador = entrenador;
+	public void setJugadores(Set<Jugador> jugadores) {
+		this.jugadores = jugadores;
 	}
+	
 }
