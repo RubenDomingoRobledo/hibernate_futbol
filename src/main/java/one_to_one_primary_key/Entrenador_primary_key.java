@@ -1,4 +1,4 @@
-package one_to_one;
+package one_to_one_primary_key;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,14 +12,14 @@ import org.hibernate.annotations.Parameter;
 
 @Entity 
 @Table(name="ENTRENADOR")
-public class Entrenador {
+public class Entrenador_primary_key {
 	private int id_Entrenador;
 	private String nombre;
 	private String apellidos;
 	private int edad;
-	private Equipo equipo;
+	private Equipo_primary_key equipo;
 
-	public Entrenador() {
+	public Entrenador_primary_key() {
 	}
 
 	@Id
@@ -60,11 +60,11 @@ public class Entrenador {
 	}
 
 	@OneToOne(mappedBy = "entrenador")
-	public Equipo getEquipo() {
+	public Equipo_primary_key getEquipo() {
 		return equipo;
 	}
 
-	public void setEquipo(Equipo equipo) {
+	public void setEquipo(Equipo_primary_key equipo) {
 		this.equipo = equipo;
 	}
 	

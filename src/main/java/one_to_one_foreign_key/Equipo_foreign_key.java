@@ -1,24 +1,20 @@
-package one_to_one;
+package one_to_one_foreign_key;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="EQUIPO")
-public class Equipo {
+public class Equipo_foreign_key {
 	private int id_Equipo;
 	private String nombre;
 	private String fecha_fundacion;
 	private String ciudad;
-	private Entrenador entrenador;
 
-	public Equipo() {
+	public Equipo_foreign_key() {
 	}
 
 	@Id
@@ -54,15 +50,5 @@ public class Equipo {
 
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
-	}
-
-	@OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-	public Entrenador getEntrenador() {
-		return entrenador;
-	}
-
-	public void setEntrenador(Entrenador entrenador) {
-		this.entrenador = entrenador;
 	}
 }

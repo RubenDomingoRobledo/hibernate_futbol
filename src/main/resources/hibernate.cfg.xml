@@ -12,7 +12,9 @@
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.format_sql">true</property>
   <property name="hibernate.hbm2ddl.auto">create</property>
-  <mapping class="one_to_one.Entrenador"/>
-  <mapping class="one_to_one.Equipo"/>
+  <mapping class="one_to_one_primary_key.Entrenador_primary_key"/>
+  <mapping class="one_to_one_primary_key.Equipo_primary_key"/>
+  <mapping class="one_to_one_foreign_key.Entrenador_foreign_key"/>
+  <mapping class="one_to_one_foreign_key.Equipo_foreign_key"/>
  </session-factory>
 </hibernate-configuration>
