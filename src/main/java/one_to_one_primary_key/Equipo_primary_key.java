@@ -1,4 +1,6 @@
-package one_to_one;
+package one_to_one_primary_key;
+
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,14 +13,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="EQUIPO")
-public class Equipo {
+public class Equipo_primary_key {
 	private int id_Equipo;
 	private String nombre;
-	private String fecha_fundacion;
+	private Date fecha_fundacion;
 	private String ciudad;
-	private Entrenador entrenador;
+	private Entrenador_primary_key entrenador;
 
-	public Equipo() {
+	public Equipo_primary_key() {
 	}
 
 	@Id
@@ -40,11 +42,11 @@ public class Equipo {
 		this.nombre = nombre;
 	}
 
-	public String getFecha_fundacion() {
+	public Date getFecha_fundacion() {
 		return fecha_fundacion;
 	}
 
-	public void setFecha_fundacion(String fecha_fundacion) {
+	public void setFecha_fundacion(Date fecha_fundacion) {
 		this.fecha_fundacion = fecha_fundacion;
 	}
 
@@ -58,11 +60,11 @@ public class Equipo {
 
 	@OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-	public Entrenador getEntrenador() {
+	public Entrenador_primary_key getEntrenador() {
 		return entrenador;
 	}
 
-	public void setEntrenador(Entrenador entrenador) {
+	public void setEntrenador(Entrenador_primary_key entrenador) {
 		this.entrenador = entrenador;
 	}
 }

@@ -1,31 +1,28 @@
-package one_to_one;
+package one_to_one_foreign_key;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
-
 @Entity 
 @Table(name="ENTRENADOR")
-public class Entrenador {
+public class Entrenador_foreign_key {
 	private int id_Entrenador;
 	private String nombre;
 	private String apellidos;
 	private int edad;
-	private Equipo equipo;
+	private Equipo_foreign_key equipo;
 
-	public Entrenador() {
+	public Entrenador_foreign_key() {
 	}
 
 	@Id
-	@GeneratedValue(generator = "foreigngen")
-    @GenericGenerator(strategy = "foreign", name="foreigngen",
-            parameters = @Parameter(name = "property", value="equipo"))
+    @GeneratedValue
     @Column(name = "ID_ENTRENADOR")
 	public int getId_Entrenador() {
 		return id_Entrenador;
@@ -59,12 +56,13 @@ public class Entrenador {
 		this.edad = edad;
 	}
 
-	@OneToOne(mappedBy = "entrenador")
-	public Equipo getEquipo() {
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="ID_EQUIPO")
+	public Equipo_foreign_key getEquipo() {
 		return equipo;
 	}
 
-	public void setEquipo(Equipo equipo) {
+	public void setEquipo(Equipo_foreign_key equipo) {
 		this.equipo = equipo;
 	}
 	
