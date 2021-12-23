@@ -1,6 +1,6 @@
 package one_to_one_primary_key;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Equipo_primary_key {
 	private int id_Equipo;
 	private String nombre;
-	private Date fecha_fundacion;
+	private LocalDate fecha_fundacion;
 	private String ciudad;
 	private Entrenador_primary_key entrenador;
 
@@ -42,11 +42,11 @@ public class Equipo_primary_key {
 		this.nombre = nombre;
 	}
 
-	public Date getFecha_fundacion() {
+	public LocalDate getFecha_fundacion() {
 		return fecha_fundacion;
 	}
 
-	public void setFecha_fundacion(Date fecha_fundacion) {
+	public void setFecha_fundacion(LocalDate fecha_fundacion) {
 		this.fecha_fundacion = fecha_fundacion;
 	}
 

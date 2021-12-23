@@ -1,5 +1,6 @@
 package one_to_many;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 public class Equipo {
 	private int id_Equipo;
 	private String nombre;
-	private String fecha_fundacion;
+	private LocalDate fecha_fundacion;
 	private String ciudad;
 	private Set<Jugador> jugadores;
 
@@ -41,11 +42,11 @@ public class Equipo {
 		this.nombre = nombre;
 	}
 
-	public String getFecha_fundacion() {
+	public LocalDate getFecha_fundacion() {
 		return fecha_fundacion;
 	}
 
-	public void setFecha_fundacion(String fecha_fundacion) {
+	public void setFecha_fundacion(LocalDate fecha_fundacion) {
 		this.fecha_fundacion = fecha_fundacion;
 	}
 

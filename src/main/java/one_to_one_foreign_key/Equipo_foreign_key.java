@@ -1,5 +1,7 @@
 package one_to_one_foreign_key;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,7 @@ import javax.persistence.Table;
 public class Equipo_foreign_key {
 	private int id_Equipo;
 	private String nombre;
-	private String fecha_fundacion;
+	private LocalDate fecha_fundacion;
 	private String ciudad;
 
 	public Equipo_foreign_key() {
@@ -36,11 +38,11 @@ public class Equipo_foreign_key {
 		this.nombre = nombre;
 	}
 
-	public String getFecha_fundacion() {
+	public LocalDate getFecha_fundacion() {
 		return fecha_fundacion;
 	}
 
-	public void setFecha_fundacion(String fecha_fundacion) {
+	public void setFecha_fundacion(LocalDate fecha_fundacion) {
 		this.fecha_fundacion = fecha_fundacion;
 	}
 

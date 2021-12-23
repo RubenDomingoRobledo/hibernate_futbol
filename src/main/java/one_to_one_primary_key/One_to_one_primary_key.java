@@ -1,5 +1,7 @@
 package one_to_one_primary_key;
 
+import java.time.LocalDate;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -14,7 +16,7 @@ public class One_to_one_primary_key {
 				t = s.beginTransaction();
 		        Equipo_primary_key equipo1 = new Equipo_primary_key();
 		        equipo1.setNombre("Real_Madrdid");
-		        equipo1.setFecha_fundacion("06-03-1902");
+		        equipo1.setFecha_fundacion(LocalDate.of(1902, 3, 6));
 		        equipo1.setCiudad("Madrid");
 		        
 		        Entrenador_primary_key entrenador1 = new Entrenador_primary_key();
@@ -29,7 +31,7 @@ public class One_to_one_primary_key {
 		        
 		        Equipo_primary_key equipo2 = new Equipo_primary_key();
 		        equipo2.setNombre("FC Barcelona");
-		        equipo2.setFecha_fundacion("29-11-1899");
+		        equipo2.setFecha_fundacion(LocalDate.of(1899, 11, 29));
 		        equipo2.setCiudad("Barcelona");
 		        
 		        Entrenador_primary_key entrenador2 = new Entrenador_primary_key();
@@ -44,7 +46,7 @@ public class One_to_one_primary_key {
 		        
 		        Equipo_primary_key equipo3 = new Equipo_primary_key();
 		        equipo3.setNombre("Atletico de Madrid");
-		        equipo3.setFecha_fundacion("26-04-1903");
+		        equipo3.setFecha_fundacion(LocalDate.of(1903, 4, 26));
 		        equipo3.setCiudad("Madrid");
 		        
 		        Entrenador_primary_key entrenador3 = new Entrenador_primary_key();
