@@ -16,5 +16,9 @@
   <mapping class="one_to_one_primary_key.Equipo_primary_key"/>
   <mapping class="one_to_one_foreign_key.Entrenador_foreign_key"/>
   <mapping class="one_to_one_foreign_key.Equipo_foreign_key"/>
+  <mapping class="one_to_many.Equipo_1_to_m"/>
+  <mapping class="one_to_many.Jugador"/>
+  <mapping class="many_to_many.Competicion"/>
+  <mapping class="many_to_many.Equipo_m_to_m"/>
  </session-factory>
 </hibernate-configuration>

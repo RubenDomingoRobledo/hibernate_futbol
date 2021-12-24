@@ -13,14 +13,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="EQUIPO")
-public class Equipo {
+public class Equipo_1_to_m {
 	private int id_Equipo;
 	private String nombre;
 	private LocalDate fecha_fundacion;
 	private String ciudad;
 	private Set<Jugador> jugadores;
 
-	public Equipo() {
+	public Equipo_1_to_m() {
+	}
+
+	public Equipo_1_to_m(String nombre, LocalDate fecha_fundacion, String ciudad) {
+		this.nombre = nombre;
+		this.fecha_fundacion = fecha_fundacion;
+		this.ciudad = ciudad;
 	}
 
 	@Id
